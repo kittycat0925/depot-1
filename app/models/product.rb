@@ -1,9 +1,9 @@
 class Product < ActiveRecord::Base
 	has_many :line_items
 
-	before_destroy :ensure_note_referenced_by_any_line_item
+	before_destroy :ensure_not_referenced_by_any_line_item
 
-  attr_accessible :description, :image_url, :price, :title
+  attr_accessible :description, :image_url, :price, :title, :line_items, :products
   validates :description, :image_url, :price, :title, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
