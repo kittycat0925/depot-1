@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LineItemsControllerTest < ActionController::TestCase  
+class LineItemsControllerTest < ActionController::TestCase
   setup do
     @line_item = line_items(:one)
   end
