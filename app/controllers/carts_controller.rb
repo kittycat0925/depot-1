@@ -54,7 +54,7 @@ end
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
         format.json { render json: @cart, status: :created, location: @cart }
       else
-        format.html { render action: "new" }
+        format.html { render "new" }
         format.json { render json: @cart.errors, status: :unprocessable_entity }
       end
     end
@@ -70,7 +70,7 @@ end
         format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render "edit" }
         format.json { render json: @cart.errors, status: :unprocessable_entity }
       end
     end
