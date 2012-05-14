@@ -26,9 +26,23 @@
     <%= f.text_field :email, size: 40 %>
   </div>
   <div class="field">
-    <%= f.label :pay_type %><br />
-    <%= f.select :pay_type, Order::PAYMENT_TYPES,
-                      prompt: t('.pay_prompt_html') %>
+    <form action="" method="POST" id="payment-form">
+    <div class="form-row">
+        <label>Card Number</label>
+        <input type="text" size="20" autocomplete="off" class="card-number"/>
+    </div>
+    <div class="form-row">
+        <label>CVC</label>
+        <input type="text" size="4" autocomplete="off" class="card-cvc"/>
+    </div>
+    <div class="form-row">
+        <label>Expiration (MM/YYYY)</label>
+        <input type="text" size="2" class="card-expiry-month"/>
+        <span> / </span>
+        <input type="text" size="4" class="card-expiry-year"/>
+    </div>
+    <button type="submit" class="submit-button">Submit Payment</button>
+    </form>
   </div>
   <div class="actions">
     <%= f.submit t('.submit') %>
